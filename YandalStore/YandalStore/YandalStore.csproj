@@ -1,0 +1,369 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F827254C-DD90-4998-B8D0-565180636507}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YandalStore</RootNamespace>
+    <AssemblyName>YandalStore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\AdminPanel\Images\login-01.png" />
+    <Content Include="Areas\AdminPanel\Images\UserImages\abdullah.png" />
+    <Content Include="Content\BG.png" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\fontawesome.css" />
+    <Content Include="Content\css\fontawesome.min.css" />
+    <Content Include="Content\css\slick-theme.css" />
+    <Content Include="Content\css\slick-theme.min.css" />
+    <Content Include="Content\css\slick.min.css" />
+    <Content Include="Content\css\templatemo.css" />
+    <Content Include="Content\css\templatemo.min.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\img\about-hero.svg" />
+    <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\apple-icon.png" />
+    <Content Include="Content\img\banner1.png" />
+    <Content Include="Content\img\banner2.png" />
+    <Content Include="Content\img\banner3.png" />
+    <Content Include="Content\img\banner_img_01.jpg" />
+    <Content Include="Content\img\banner_img_02.jpg" />
+    <Content Include="Content\img\banner_img_03.jpg" />
+    <Content Include="Content\img\brand_01.png" />
+    <Content Include="Content\img\brand_02.png" />
+    <Content Include="Content\img\brand_03.png" />
+    <Content Include="Content\img\brand_04.png" />
+    <Content Include="Content\img\c1.png" />
+    <Content Include="Content\img\c2.png" />
+    <Content Include="Content\img\c3.png" />
+    <Content Include="Content\img\category_img_01.jpg" />
+    <Content Include="Content\img\category_img_02.jpg" />
+    <Content Include="Content\img\category_img_03.jpg" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\feature_prod_01.jpg" />
+    <Content Include="Content\img\feature_prod_02.jpg" />
+    <Content Include="Content\img\feature_prod_03.jpg" />
+    <Content Include="Content\img\product_single_01.jpg" />
+    <Content Include="Content\img\product_single_02.jpg" />
+    <Content Include="Content\img\product_single_03.jpg" />
+    <Content Include="Content\img\product_single_04.jpg" />
+    <Content Include="Content\img\product_single_05.jpg" />
+    <Content Include="Content\img\product_single_06.jpg" />
+    <Content Include="Content\img\product_single_07.jpg" />
+    <Content Include="Content\img\product_single_08.jpg" />
+    <Content Include="Content\img\product_single_09.jpg" />
+    <Content Include="Content\img\product_single_10.jpg" />
+    <Content Include="Content\img\shop_01.jpg" />
+    <Content Include="Content\img\shop_02.jpg" />
+    <Content Include="Content\img\shop_03.jpg" />
+    <Content Include="Content\img\shop_04.jpg" />
+    <Content Include="Content\img\shop_05.jpg" />
+    <Content Include="Content\img\shop_06.jpg" />
+    <Content Include="Content\img\shop_07.jpg" />
+    <Content Include="Content\img\shop_08.jpg" />
+    <Content Include="Content\img\shop_09.jpg" />
+    <Content Include="Content\img\shop_10.jpg" />
+    <Content Include="Content\img\shop_11.jpg" />
+    <Content Include="Content\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery-1.11.0.min.js" />
+    <Content Include="Content\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Content\js\slick.min.js" />
+    <Content Include="Content\js\templatemo.js" />
+    <Content Include="Content\js\templatemo.min.js" />
+    <Content Include="Content\signin.css" />
+    <Content Include="Content\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\webfonts\slick.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\6333040.jpg" />
+    <Content Include="Images\icons8-github-48.png" />
+    <Content Include="Images\icons8-gmail-logo-48.png" />
+    <Content Include="Images\icons8-linkedin-circled-48.png" />
+    <Content Include="Images\yandal-01.png" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AdminPanel\AdminPanelAreaRegistration.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\AdminController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\BrandController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\HomeController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\ManagerLoginController.cs" />
+    <Compile Include="Areas\AdminPanel\Controllers\ProductController.cs" />
+    <Compile Include="Areas\AdminPanel\Filters\AdminAuthenticationFilterAttributeController.cs" />
+    <Compile Include="Areas\AdminPanel\Model\ViewModels\AdminLoginViewModel.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\FavoriteController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserCartController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Favorite.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\ManagerType.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductImage.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserCart.cs" />
+    <Compile Include="Models\ViewModels\PayViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserLoginViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Areas\AdminPanel\Views\web.config" />
+    <Content Include="Areas\AdminPanel\Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Home\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\CreateCategory.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\EditCategory.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Category\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Brand\Details.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Brand\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Brand\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Brand\Delete.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Product\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Product\Create.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Product\AddImage.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\ManagerLogin\Login.cshtml" />
+    <Content Include="Images\MUSTAFA ABDULLAH ÇAĞIŞ CV.pdf" />
+    <Content Include="Areas\AdminPanel\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\AdminPanel\Views\Admin\EditManager.cshtml" />
+    <Content Include="Content\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\webfonts\slick.eot" />
+    <Content Include="Content\webfonts\slick.ttf" />
+    <Content Include="Content\webfonts\slick.woff" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\UserCart\Index.cshtml" />
+    <Content Include="Views\UserCart\BuyProducts.cshtml" />
+    <Content Include="Views\UserCart\PaySuccess.cshtml" />
+    <Content Include="Views\UserCart\Favrouite.cshtml" />
+    <Content Include="Views\Favorite\Index.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\kategoriDetay.cshtml" />
+    <Content Include="Views\User\Signup.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\UserCart\OrderDetail.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\AdminPanel\Data\" />
+    <Folder Include="Areas\AdminPanel\Views\AdminAuthenticationFilterAttribute\" />
+    <Folder Include="Images\ProductImages\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64787</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44370/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

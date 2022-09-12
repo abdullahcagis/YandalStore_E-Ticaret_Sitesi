@@ -1,0 +1,133 @@
+﻿@model YandalStore.Models.ViewModels.PayViewModel
+@{
+    ViewBag.Title = "BuyProducts";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Sepetim</h4>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    <div class="card-body">
+                        @ViewBag.result
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Kart Sahibi İsim Soyad</label>
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "İsim Soyad" } })
+                                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <label>Kart Numarası</label>
+                                @Html.EditorFor(model => model.CardNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "---- ---- ---- ----" } })
+                                @Html.ValidationMessageFor(model => model.CardNumber, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <label>Son Kullanma Ay</label>
+                                <select name="ExpM" class="form-select">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Son Kullanma Yıl</label>
+                                <select name="ExpY" class="form-select">
+                                    <option value="22">2022</option>
+                                    <option value="23">2023</option>
+                                    <option value="24">2024</option>
+                                    <option value="25">2025</option>
+                                    <option value="26">2026</option>
+                                    <option value="27">2027</option>
+                                    <option value="28">2028</option>
+                                    <option value="29">2029</option>
+                                    <option value="30">2030</option>
+                                    <option value="31">2031</option>
+                                    <option value="32">2032</option>
+                                    <option value="33">2033</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>CVV Numarası</label>
+                                @Html.EditorFor(model => model.Cvv, new { htmlAttributes = new { @class = "form-control", @placeholder = "*9*" } })
+                                @Html.ValidationMessageFor(model => model.Cvv, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <input type="checkbox" /> Kullanıcı Aydınlatma Metninin Okudum Kabul Ediyorum
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-md-12">
+                                <input type="checkbox" /> Mesafeli Satış Sözleşmesini Okudum Kabul Ediyorum
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-md-12">
+                                <input type="checkbox" /> Bana Reklam Gönder
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" value="Ödeme Tamamla" class="btn btn-success" />
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Sepet Toplamı</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Ara Toplam</td>
+                            <td style="font-weight:900">
+
+                                <label class="float-end"> @ViewBag.semitotal ₺</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Vergi</td>
+                            <td style="font-weight:900">
+
+                                <label class="float-end"> @ViewBag.totalTax ₺</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Toplam</td>
+                            <td style="font-weight:900">
+
+                                <label class="float-end"> @ViewBag.total ₺</label>
+
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

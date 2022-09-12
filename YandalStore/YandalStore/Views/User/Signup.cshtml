@@ -1,0 +1,61 @@
+﻿@model YandalStore.Models.User
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Üye Ol</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            @using (Html.BeginForm())
+                            {
+                                <div>
+                                    @Html.LabelFor(model => model.Name)
+                                    @Html.EditorFor(model => model.Name, new { htmlattributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    @Html.LabelFor(model => model.Surname)
+                                    @Html.EditorFor(model => model.Surname, new { htmlattributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Surname, null, new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    @Html.LabelFor(model => model.Mail)
+                                    @Html.EditorFor(model => model.Mail, new { htmlattributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Mail, null, new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    @Html.LabelFor(model => model.Password)
+                                    @Html.EditorFor(model => model.Password, new { htmlattributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
+                                </div>                                
+                                <div class="mt-5">
+                                    <div class="d-grid">
+                                        <button class="btn btn-warning" type="submit">Üye Ol</button>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+                        <div class="col-8">
+                            <img src="~/Images/6333040.jpg" class="img-thumbnail" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<YandalStore.Models.Product>
+@{
+    ViewBag.Title = "kategoriDetay";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<main>
+
+    <section class="py-2 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-9 col-md-12 mx-auto">
+
+
+                <h1 class="fw-light">Aradığınız ürünler FriendYol'da en uygun fiyata sizinle!</h1>
+
+
+            </div>
+        </div>
+    </section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card shadow">
+                            <a href="@Url.Action("Detail","Product", new {id = item.ID})" class="link-secondary" style="text-decoration:none">
+                                <img src="~/Images/ProductImages/@item.CoverImage" class="card-img" width="100" height="350" />
+                                <div class="card-body">
+                                    <div style="min-height:100px;">
+                                        <b class="text-dark">@item.Name</b>
+                                        @if (item.Description.Length >= 80)
+                                        {
+                                            <p class="card-text">
+                                                @item.Description.Substring(0, 80)
+                                            </p>
+
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text">
+                                                @item.Description
+                                            </p>
+                                        }
+                                        <b class="text-warning">@item.Price ₺</b>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer">
+
+                                <div class="d-grid">
+                                    <a href="@Url.Action("Add","UserCart", new { id= item.ID})" class="btn btn-sm btn-warning">Sepete Ekle</a>
+                                </div>
+                                <div class="d-grid">
+                                    <a href="@Url.Action("AddFavorites","Favorite", new { id = item.ID})" class="btn btn-sm btn-dark">Favorilere Ekle</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</main>
+

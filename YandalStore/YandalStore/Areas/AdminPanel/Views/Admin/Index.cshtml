@@ -1,0 +1,37 @@
+﻿@model IEnumerable<YandalStore.Models.Manager>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Profilim</h1>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID)</th>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Surname)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.Password)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.Mail</td>
+                <td>@item.Password</td>
+                <td>
+                    <a href="@Url.Action("EditManager","Admin",new {id = item.ID })" class="btn btn-sm btn-dark">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

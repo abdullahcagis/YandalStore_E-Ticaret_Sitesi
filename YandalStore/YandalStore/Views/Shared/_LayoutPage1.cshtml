@@ -1,0 +1,76 @@
+﻿@using YandalStore.Models
+<!DOCTYPE html>
+@{ 
+    Model1 db = new Model1();
+    List<UserCart> cartList = new List<UserCart>();
+    if(Session["user"] != null)
+    {
+        User u = Session["user"] as User;
+        int id = u.ID;
+        cartList = db.UserCarts.Where(x => x.User_ID == id).ToList();       
+    }
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/Content/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/Content/css/slick-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/css/slick.min.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.css" rel="stylesheet" />
+    <link href="~/Content/css/templatemo.min.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/js/jquery-1.11.0.min.js"></script>
+    <script src="~/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/js/slick.min.js"></script>
+    <script src="~/Content/js/templatemo.js"></script>
+    <script src="~/Content/js/templatemo.min.js"></script>
+    <a href="~/Content/webfonts/fa-brands-400.eot"></a>
+    <a href="~/Content/webfonts/fa-brands-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff"></a>
+    <a href="~/Content/webfonts/fa-brands-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-regular-400.eot"></a>
+    <a href="~/Content/webfonts/fa-regular-400.ttf"></a>
+    <a href="~/Content/webfonts/fa-regular-400.woff"</a>
+    <a href="~/Content/webfonts/fa-regular-400.woff2"></a>
+    <a href="~/Content/webfonts/fa-solid-900.eot"></a>
+    <a href="~/Content/webfonts/fa-solid-900.ttf"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff"></a>
+    <a href="~/Content/webfonts/fa-solid-900.woff2"></a>
+    <a href="~/Content/webfonts/slick.eot"></a>
+    <a href="~/Content/webfonts/slick.ttf"></a>
+    <a href="~/Content/webfonts/slick.woff"></a>
+</head>
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">YandalStore@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">0222 222 22 22</a>
+                </div>
+                <div>
+
+                    <a class="text-light" href="https://github.com/abdullahcagis" target="_blank"><i class="fab fa-github fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/in/mustafaabdullahcagi%CC%87s" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+ 
+
+
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

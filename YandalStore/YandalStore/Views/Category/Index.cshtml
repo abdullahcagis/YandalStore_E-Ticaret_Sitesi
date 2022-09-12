@@ -1,0 +1,37 @@
+﻿@model IEnumerable<YandalStore.Models.Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-responsive-sm table-hover">
+                <h4 class="" style="color:black">KATEGORİLER</h4>
+                <br />
+
+                <thead>
+                    <tr>
+
+                        <th>Kategori Adı</th>
+                        <th>Açıklama</th>
+                        <th>Detay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.Name</td>
+                            <td>@item.Description</td>
+                            <td><a href="@Url.Action("kategoriDetay","Category" ,new { id = item.ID})" class="btn btn-warning">Ürünler</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

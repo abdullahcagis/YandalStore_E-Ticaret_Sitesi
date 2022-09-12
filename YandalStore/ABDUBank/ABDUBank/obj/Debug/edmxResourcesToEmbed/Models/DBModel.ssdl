@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ABDUBANK_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MusteriHesap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Musteri_ID" Type="int" Nullable="false" />
+    <Property Name="KartNumarası" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="SonKullanmaAy" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="SonKullanmaYil" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="CVV" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Bakiye" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Musteriler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Isim" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Soyisim" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanalPosMusteri">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Isim" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SaticiNo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SaticiSifre" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Bakiye" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_MusteriHesap_Musteriler">
+    <End Role="Musteriler" Type="Self.Musteriler" Multiplicity="1" />
+    <End Role="MusteriHesap" Type="Self.MusteriHesap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Musteriler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MusteriHesap">
+        <PropertyRef Name="Musteri_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ABDUBANK_DBModelStoreContainer">
+    <EntitySet Name="MusteriHesap" EntityType="Self.MusteriHesap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteriler" EntityType="Self.Musteriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanalPosMusteri" EntityType="Self.SanalPosMusteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MusteriHesap_Musteriler" Association="Self.FK_MusteriHesap_Musteriler">
+      <End Role="Musteriler" EntitySet="Musteriler" />
+      <End Role="MusteriHesap" EntitySet="MusteriHesap" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

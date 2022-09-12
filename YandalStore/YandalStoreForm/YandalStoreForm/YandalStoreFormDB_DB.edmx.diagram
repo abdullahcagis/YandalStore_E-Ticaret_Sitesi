@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8ee774adecf446c7b14f93b8fca8309b" Name="Diagram1">
+        <EntityTypeShape EntityType="YandalStoreForm_DBModel.Brand" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YandalStoreForm_DBModel.Category" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="YandalStoreForm_DBModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="YandalStoreForm_DBModel.ProductImage" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YandalStoreForm_DBModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="YandalStoreForm_DBModel.FK_Product_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="YandalStoreForm_DBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="YandalStoreForm_DBModel.FK_ProductImage_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

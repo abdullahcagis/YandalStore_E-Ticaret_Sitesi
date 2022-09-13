@@ -39,78 +39,7 @@
     <a href="~/Content/webfonts/slick.woff"></a>
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <a class="navbar-brand text-success logo h2 align-self-center" href="index.html">
-                YandalStore
-            </a>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
-                <div class="flex-fill">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Home")" class="nav-link">Anasayfa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Shop","Home")" class="nav-link">Alışveriş</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Index","Category")" class="nav-link">Kategoriler</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="@Url.Action("Contact","Home")" class="nav-link">İletişim</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="navbar align-self-center d-flex">
-                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                            <div class="input-group-text">
-                                <i class="fa fa-fw fa-search"></i>
-                            </div>
-                        </div>
-                    </div>
-                    @if (Session["user"] == null)
-                    {
-                        <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Login","User")">
-                            <i class="fa fa-fw fa-sign-in-alt text-dark mr-1"></i>
-                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                        </a>
-                        <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Signup","User")">
-                            <i class="fa fa-fw fa-id-card text-dark mr-3"></i>
-                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                        </a>
-                    }
-                    else
-                    {
-                        <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Index","UserCart")">
-                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                        </a>
-                        <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Index","Favorite")">
-                            <i class="fa fa-fw fa-heart text-dark mr-3"></i>
-                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                        </a>
-                        <a class="nav-icon position-relative text-decoration-none" href="@Url.Action("Logout","User")">
-                            <i class="fa fa-fw fa-window-close text-dark mr-3"></i>
-                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                        </a>
-                    }
-
-                </div>
-            </div>
-
-        </div>
-    </nav>
-    <!-- Close Header -->
-    <!-- Modal -->
+   
     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="w-100 pt-1 mb-5 text-right">
@@ -211,19 +140,19 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="~/Content/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
-                <h5 class="text-center mt-3 mb-3">Çamurluk Astarı</h5>
-                <p class="text-center"><a class="btn btn-success">İncele</a></p>
+                <a href="@Url.Action("KategoriDetay","Category", new {id = 2})"><img src="~/Content/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Saat</h5>
+                <p class="text-center"><a href="@Url.Action("KategoriDetay","Category", new {id = 2})" class="btn btn-success">İncele</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="~/Content/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Kolçak</h2>
-                <p class="text-center"><a class="btn btn-success">İncele</a></p>
+                <a href="@Url.Action("KategoriDetay","Category", new {id = 3})"><img src="~/Content/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Ayakkabı</h2>
+                <p class="text-center"><a href="@Url.Action("KategoriDetay","Category", new {id = 3})" class="btn btn-success">İncele</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="~/Content/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Far</h2>
-                <p class="text-center"><a class="btn btn-success">İncele</a></p>
+                <a href="@Url.Action("KategoriDetay","Category", new {id = 9})"><img src="~/Content/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Gözlük</h2>
+                <p class="text-center"><a href="@Url.Action("KategoriDetay","Category", new {id = 9})" class="btn btn-success">İncele</a></p>
             </div>
         </div>
     </section>

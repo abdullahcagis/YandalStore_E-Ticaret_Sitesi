@@ -290,6 +290,7 @@
     <Content Include="Content\webfonts\slick.eot" />
     <Content Include="Content\webfonts\slick.ttf" />
     <Content Include="Content\webfonts\slick.woff" />
+    <Content Include="Areas\AdminPanel\Views\Product\OrderDetail.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -310,8 +311,8 @@
     <Content Include="Views\Category\kategoriDetay.cshtml" />
     <Content Include="Views\User\Signup.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\UserCart\OrderDetail.cshtml" />
     <Content Include="Views\Home\Shop.cshtml" />
+    <Content Include="Views\UserCart\OrderDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

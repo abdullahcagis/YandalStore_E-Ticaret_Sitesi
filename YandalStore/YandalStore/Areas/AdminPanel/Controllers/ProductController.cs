@@ -138,6 +138,11 @@ namespace YandalStore.Areas.AdminPanel.Controllers
             db.SaveChanges();
             return RedirectToAction("AddImage");
         }
+        public ActionResult OrderDetail()
+        {
+            var sipariss = db.UserCarts.ToList();
+            return View(sipariss.ToList());
+        }
 
 
 

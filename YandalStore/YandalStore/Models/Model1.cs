@@ -29,6 +29,8 @@ namespace YandalStore.Models
 
         public virtual DbSet<Favorite> Favorites { get; set; }
 
+        
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

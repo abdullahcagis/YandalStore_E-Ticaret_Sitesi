@@ -24,5 +24,7 @@ namespace YandalStore.Models
 
         [Display(Name = "Kayıt Tarihi")]
         public DateTime CreationDate { get; set; }
+
+        
     }
 }

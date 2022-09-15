@@ -22,7 +22,7 @@ namespace YandalStore.Controllers
     public class UserCartController : Controller
     {
         Model1 db = new Model1();
-        UserCart uc = new UserCart();
+        
         // GET: UserCart
         public ActionResult Index()
         {
@@ -35,14 +35,15 @@ namespace YandalStore.Controllers
             return RedirectToAction("Login", "User");
         }
         public ActionResult Add(int? id, int? adet)
-        {            
+        {
             if (id != null)
             {
                 if (Session["user"] != null)
                 {
-                    UserCart ucc = db.UserCarts.FirstOrDefault(x => x.Product_ID == id);                   
+                    UserCart ucc = db.UserCarts.FirstOrDefault(x => x.Product_ID == id);
                     if (ucc == null)
-                    {                       
+                    {
+                        UserCart uc = new UserCart();
                         uc.User_ID = ((User)Session["user"]).ID;
                         uc.Product_ID = Convert.ToInt32(id);
                         uc.Quantity = adet ?? 1;
@@ -52,14 +53,16 @@ namespace YandalStore.Controllers
                     }
                     else
                     {
-                        ucc.Quantity = ucc.Quantity + (adet ?? 1);                        
+                        ucc.Quantity = ucc.Quantity + (adet ?? 1);
                         db.SaveChanges();
                     }
+                    
                 }
-                else
-                {
-                    return RedirectToAction("Login", "User");
-                }
+            
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
             }
             return RedirectToAction("Index", "Home");
         }
@@ -157,6 +160,7 @@ namespace YandalStore.Controllers
         [HttpGet]
         public ActionResult PaySuccess()
         {
+           
             return View();
         }
 
@@ -172,7 +176,7 @@ namespace YandalStore.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
         public ActionResult OrderDetail()
         {
             if (Session["user"] != null)

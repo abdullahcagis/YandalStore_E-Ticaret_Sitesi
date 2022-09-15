@@ -47,7 +47,7 @@ namespace YandalStore.Areas.AdminPanel.Controllers
                 model.CreationDay = DateTime.Now;
                 db.Products.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("AddImage", "Product", new { id = model.ID });
+                return RedirectToAction("Index", "Product");
             }
             return View(model);
         }
